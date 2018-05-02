@@ -1,3 +1,4 @@
+import time
 from yaml import load
 
 
@@ -8,4 +9,8 @@ def before_all(context):
     context.my_id = context.settings['id']
     context.headers = {}
     context.verify_ssl = True
+
+
+def before_scenarios(context):
+    time.sleep(2)
 
